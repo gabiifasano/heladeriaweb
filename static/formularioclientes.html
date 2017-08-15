@@ -1,0 +1,48 @@
+<form action="index.php" method="post" enctype= "multipart/form-data">
+  <div class="form-group">
+    <label for="txtClientesId">Código:</label>
+    <input type="text" id="txtClientesId" name="txtClientesId" value="{clientesid}" class="form-control" readonly="readonly"/>
+  </div>
+  <div class="form-group">
+    <label for="txtClientesNombre">Cliente:</label>
+    <input type="text" id="txtClientesNombre" name="txtClientesNombre" value="{clientesnombre}" class="form-control"/>
+  </div>
+    <div class="form-group">
+    <label for="txtClientesDni">Dni:</label>
+    <input type="text" id="txtClientesDni" name="txtClientesDni" value="{clientesdni}" class="form-control"  maxlength="8"/>
+  </div>
+  <div class="form-group">
+    <label for="txtClientesFechaNacimiento">Fecha de nacimiento:</label>
+    <input type="date" id="txtClientesFechaNacimiento" name="txtClientesFechaNacimiento" value="{clientesfechanacimiento}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="txtClientesTelefono">Telefono:</label>
+    <input type="text" id="txtClientesTelefono" name="txtClientesTelefono" value="{clientestelefono}" class="form-control"/>
+  </div>
+    <div class="form-group">
+    <label for="cboLocalidad">Localidades:</label>
+    <select id="cboLocalidad" name="cboLocalidad" class="form-control"> 
+      {contenidoCboLocalidad}
+    </select>
+  </div>
+  <div class="form-group">
+    <img src="static\imgs\{clientesfoto}" class="img-thumbnail"/>
+  </div>
+  <div class="file">
+    <label for="filClientesFoto">Foto:</label>
+    <input type="file" id="filClientesFoto" name="filClientesFoto" value="{clientesfoto}" class="form-control"/>
+  </div>
+    <script>
+    $('#filClientesFoto').fileinput({
+        showUpload:false,
+        language: 'es',
+        allowedFileExtensions: ['jpg', 'png', 'gif']
+    });
+</script>
+  
+  
+  <input type="hidden" name="hidClientesFoto" value="{clientesfoto}" />
+  <input type="hidden" name="seccion" value="clientes" />
+  <input type="hidden" name="accion" value="guardarEdicion" />
+  <input type="submit" value="Guardar" class="btn btn-default" />
+</form>

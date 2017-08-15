@@ -1,0 +1,54 @@
+<form action="index.php" method="post" enctype= "multipart/form-data">
+  <div class="form-group">
+    <label for="txtProductosId">Código:</label>
+    <input type="text" id="txtProductosId" name="txtProductosId" value="{productosid}" class="form-control" readonly="readonly"/>
+  </div>
+  <div class="form-group">
+    <label for="txtProductosDescripcion">Producto:</label>
+    <input type="text" id="txtProductosDescripcion" name="txtProductosDescripcion" value="{productosdescripcion}" class="form-control"/>
+  </div>
+    <div class="form-group">
+    <label for="txtProductosPrecio">Precio:</label>
+    <input type="text" id="txtProductosPrecio" name="txtProductosPrecio" value="{productosprecio}" class="form-control"  maxlength="8"/>
+  </div>
+  <div class="form-group">
+    <!--label for="txtProductosFechaNacimiento">Fecha de nacimiento:</label>
+    <input type="date" id="txtProductosFechaNacimiento" name="txtProductosFechaNacimiento" value="{clientesfechanacimiento}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="txtProductosTelefono">Telefono:</label>
+    <input type="text" id="txtProductosTelefono" name="txtProductosTelefono" value="{clientestelefono}" class="form-control"/>
+  </div-->
+    <div class="form-group">
+    <label for="cboRubro">Rubro:</label>
+    <select id="cboRubro" name="cboRubro" class="form-control"> 
+      {contenidoCboRubro}
+    </select>
+  </div>
+  <div class="form-group">
+    <img src="static\imgs\{productosfoto}" class="img-thumbnail"/>
+  </div>
+  <div class="file">
+    <label for="filProductosFoto">Foto:</label>
+    <input type="file" id="filProductosFoto" name="filProductosFoto" value="{productosfoto}" class="form-control"/>
+  </div>
+  <script>
+    $('#filProductosFoto').fileinput({
+        showUpload:false,
+        language: 'es',
+        allowedFileExtensions: ['jpg', 'png', 'gif']
+    });
+</script>
+
+  <!--div class="form-group">
+    <label for="txtProductosObservaciones">Observaciones:</label>
+    <textarea id="txtProductosObservaciones" name="txtProductosObservaciones" class="form-control"/>{clientesobservaciones}
+    </textarea
+    </div-->
+  
+  <input type="hidden" name="hidProductosFoto" value="{productosfoto}" />
+  <input type="hidden" name="seccion" value="productos" />
+  <input type="hidden" name="accion" value="guardarEdicion" />
+  <input type="submit" value="Guardar" class="btn btn-default" />
+</form>
+
